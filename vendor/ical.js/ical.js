@@ -357,6 +357,7 @@
       , 'DTEND' : dateParam('end')
       , 'EXDATE' : exdateParam('exdate')
       ,' CLASS' : storeParam('class')
+	  ,' STATUS' : storeParam('status')
       , 'TRANSP' : storeParam('transparency')
       , 'GEO' : geoParam('geo')
       , 'PERCENT-COMPLETE': storeParam('completion')

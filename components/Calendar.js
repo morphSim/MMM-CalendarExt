@@ -109,6 +109,7 @@ Calendar.prototype.fetch = function() {
 			//var today = moment().startOf("day")
 			var title = "Unknown Event"
 			var description = ""
+			var status = ""
 			var location = null
 			var geo = null
 			var uid = null
@@ -129,7 +130,8 @@ Calendar.prototype.fetch = function() {
 				location = event.location || null
 				geo = event.geo || null
 				description = event.description || null
-
+				status = event.status || null
+				
 				if (!event.uid) {
 					uid
 						= (title + moment(event.start).format("x")).hashCode()
@@ -247,6 +249,7 @@ Calendar.prototype.fetch = function() {
 								"oneLineEvent": self.config.oneLineEvent,
 								"title": recurrenceTitle,
 								"description": description,
+								"status": status,
 								"location": location,
 								"geo": geo,
 								"startDate": startDate.format("x"),
@@ -312,6 +315,7 @@ Calendar.prototype.fetch = function() {
 						"oneLineEvent": self.config.oneLineEvent,
 						"title": title,
 						"description": description,
+						"status": status,
 						"location": location,
 						"geo": geo,
 						"startDate": startDate.format("x"),
@@ -438,6 +442,7 @@ Calendar.prototype.isEventsChanged = function(eArray) {
 		if (ee.location !== ce.location) return 1
 		if (ee.startDate !== ce.startDate) return 1
 		if (ee.description !== ce.description) return 1
+		if (ee.status !== ce.status) return 1
 	}
 	return 0
 }

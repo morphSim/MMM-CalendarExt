@@ -362,6 +362,11 @@ RenderHelper.prototype.getEventDom = function(ev, cfg, matched) {
 
 	eventWrapper.style.backgroundColor = ev.color
 	
+	if(ev.status == "TENTATIVE")
+	{
+		eventWrapper.style.opacity = 0.5		
+	}
+	
 	var symbolWrapper = document.createElement("div")
 	if (symbolType == "md") {
 		symbolWrapper.className
