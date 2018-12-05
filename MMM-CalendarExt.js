@@ -352,6 +352,7 @@ Module.register("MMM-CalendarExt", {
       classPatternWhere: [],
       styleName: curCfg.defaultCalendar.styleName,
       symbol: curCfg.defaultCalendar.symbol,
+	  color: curCfg.defaultCalendar.color,
       title: null,
       description: null,
       location: null,
@@ -446,13 +447,19 @@ Module.register("MMM-CalendarExt", {
           return 0
         }
       }
+	  
+	  // event outside of boundaries?
       if (
         moment(parseInt(e.startDate)).isBefore(moment(parseInt(filter.from)))
+		&&		
+        moment(parseInt(e.endDate)).isBefore(moment(parseInt(filter.from)))
       ) {
         return 0
       }
       if (
         moment(parseInt(e.startDate)).isAfter(moment(parseInt(filter.to)))
+		&&		
+        moment(parseInt(e.endDate)).isAfter(moment(parseInt(filter.to)))
       ) {
         return 0
       }
@@ -473,6 +480,7 @@ Module.register("MMM-CalendarExt", {
         fullDayEvent: final[i].fullDayEvent,
         styleName : final[i].styleName,
         symbol: final[i].symbol,
+		color: final[i].color,
         title: final[i].title,
         description: final[i].description,
         location: final[i].location,

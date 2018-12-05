@@ -360,6 +360,8 @@ RenderHelper.prototype.getEventDom = function(ev, cfg, matched) {
 	eventWrapper.dataset.startDate = ev.startDate
 	eventWrapper.dataset.endDate = ev.endDate
 
+	eventWrapper.style.backgroundColor = ev.color
+	
 	var symbolWrapper = document.createElement("div")
 	if (symbolType == "md") {
 		symbolWrapper.className
@@ -377,6 +379,11 @@ RenderHelper.prototype.getEventDom = function(ev, cfg, matched) {
 			= "emoji symbol symbol_" + symbol
 		symbolWrapper.innerHTML
 			= "<i class='em em-" +symbol + "'></i>"
+	} else if (symbolType == "fas") {
+		symbolWrapper.className
+			= "font-awesome symbol symbol_" + symbol
+		symbolWrapper.innerHTML
+			= "<i class='fas " +symbol + "'></i>"
 	} else {
 		symbolWrapper.className
 			= "font-awesome symbol symbol_" + symbol

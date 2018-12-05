@@ -195,7 +195,7 @@
 
 .CALEXT .eventTime {
     text-align:right;
-    font-size:80%;
+    font-size:20px;
     font-weight:normal;
     order:1;
 }
@@ -249,7 +249,7 @@
 .CALEXT .tableStyle .eventContent {
     text-overflow:ellipsis;
     font-weight:normal;
-    font-size:70%;
+    font-size:20px;
 }
 
 
@@ -278,7 +278,7 @@
 
 
 .CALEXT .tableStyle .header .title {
-    font-size:50%;
+    font-size:24px;
     padding:0;
     padding-right:5px;
     margin:0;
@@ -368,12 +368,13 @@
 */
 
 
-.CALEXT .tableStyle .eventLocation,
-.CALEXT .tableStyle .eventTime {
-    display:none;
+.CALEXT .tableStyle .eventLocation {
+     display:none;
 }
 
-
+.CALEXT .tableStyle .eventTime {
+    display:block;
+}
 
 .CALEXT  .event {
     font-weight:normal;
